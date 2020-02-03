@@ -13,8 +13,8 @@ cas_client = CASClient(
     )
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def index():
+    return redirect(url_for('profile'))
 
 @app.route('/profile')
 def profile(method=['GET']):
