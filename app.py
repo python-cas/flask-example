@@ -13,7 +13,25 @@ cas_client = CASClient(
 
 @app.route('/')
 def index():
-    return redirect(url_for('login'))
+    body = """<!DOCTYPE html>
+<html>
+  <head>
+    <title>python-cas Flask example demo</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+  </head>
+  <body>
+    <h1>Welcome to python-cas Flask example demo</h1>
+    <p><a href="/login">CAS Login</a></p>
+    <p>Related post:</p>
+    <ul>
+        <li><a href="https://djangocas.dev/blog/python-cas-flask-example/">python-cas Flask example</a></li>
+    </ul>
+    <hr>
+    <p><a href="https://djangocas.dev/">Project homepage</a></p>
+  </body>
+</html>
+"""
+    return body
 
 
 @app.route('/profile')
@@ -68,3 +86,7 @@ def logout_callback():
     # redirect from CAS logout request after CAS logout successfully
     session.pop('username', None)
     return 'Logged out from CAS. <a href="/login">Login</a>'
+
+@app.route('/ping')
+def ping():
+    return 'pong'
