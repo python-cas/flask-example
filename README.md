@@ -3,6 +3,8 @@ python-cas Flask Example
 
 An example repo to demo how to integrate python-cas into a Flask app.
 
+[Live demo](https://python-cas-flask-example.herokuapp.com/)
+
 ## More
 
 - [python-cas Flask Example](https://djangocas.dev/blog/2020-02-03-python-cas-flask-example/)
